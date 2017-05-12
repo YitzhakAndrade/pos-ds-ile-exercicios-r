@@ -88,6 +88,13 @@ length(ds[[1]])
 # Utilizando qualquer um dos pacotes para importação de arquivos em excel
 # vistos em sala de aula, importe o conteúdo da planilha DCA-Anexo I-G.
 
+setwd("~/Documents/github/pos-ds-ile-exercicios-r/")
+dados <- read.xls(
+  "./data/SICONFI_DCA_6561_ANUAL_1.xls",
+  fileEncoding="latin1", header=T, skipNul=T, skip=15, nrows=167,
+  sheet="DCA-Anexo I-G")
+
+
 
 # Exercício 6
 
@@ -110,4 +117,11 @@ write.xlsx(ToothGrowth, file, sheetName='ToothGrowth', append=T)
 # 2.7 - Importe os dados contidos no arquivo 14SerieRouboVeiculo2015.xls
 # obtido no site do Instituto de Segurança Pública (ISP).
 # Ignore a coluna e linha de totalizações.
+
+
+setwd("~/Documents/github/pos-ds-ile-exercicios-r/")
+dados <- read.xls(
+  "./data/14SerieRouboVeiculo2015.xls",
+  fileEncoding="latin1", header=T, sep=",", skipNul=T, skip=5, nrows=138)
+dados <- dados[,2:ncol(dados)]
 
